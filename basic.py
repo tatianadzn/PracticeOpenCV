@@ -1,6 +1,7 @@
 import cv2
 import matplotlib.pyplot as plt
 
+
 def read_img_in_RGB(path, name):
     img = cv2.imread(path + name)
     img_RGB = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
@@ -35,3 +36,12 @@ def increase_intensity_of_g_by(img, k):
             else:
                 col[1] = new_g
     return g_intense_img
+
+
+def cvt_gray(img):
+    return cv2.cvtColor(img, cv2.COLOR_RGB2GRAY)
+
+
+def show_img_gray(img):
+    plt.imshow(img, cmap='gray')
+    plt.show()
